@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <title>Leapfrog Technology College</title>
+    <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/style.css')) ?>
+    <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/js-image-slider.css')) ?>
+    <?php echo $this->headScript()->appendFile($this->baseUrl('/js/js-image-slider.js')) ?>
+    <?php echo $this->headScript()->appendFile($this->baseUrl('/js/jquery.js')) ?>
+    <?php echo $this->headScript()->appendFile($this->baseUrl('/js/nav.js') )?>
+</head>
+<body>
+    
+<div id="header">
+	<div id="title">
+		<div id="logo">
+			<a href="index.html" style="text-decoration:none;"><img src="<?php echo $this->baseUrl();?>/images/logo.png" alt="logo" style="border:none;"></a>
+		</div>
+		
+		<form action="#">
+		<div id="searchbox">
+			<input type="text" id="textbox" placeholder="Search LFTC">
+			<button type="submit" id="search" value="search">submit</button>
+		</div>
+		</form>    
+
+	</div>
+</div>
+	
+<div id="menuHolder">
+	<div id="menu">
+		<!--start -->
+        
+        <div id="nav">
+			<ul>
+			  <li>
+			   <a href="about.html">About</a>
+				
+			  </li>
+              <li>
+        <a href="admissions.html">Admission</a>
+      </li>
+      <li>
+        <a href="404.html">Notice</a>
+       </li>
+			  <li class="second">
+				<a href="department.html">Departments</a>
+				<ul class="subnav" id="homwnav" style="width: 200px; overflow: hidden; height: 0px;z-index:1;">
+				  <li><a href="#" style="text-indent: 20px;">&nbsp;</a></li>
+				  <li><a href="department.html#BCT" style="text-indent: 20px;">BE Computer</a></li>
+				  <li><a href="department.html#BEX" style="text-indent: 20px;">BE Electronics</a></li>
+				  <li><a href="department.html#BEL" style="text-indent: 20px;">BE Electrical</a></li>
+				  <li><a href="department.html#BIT" style="text-indent: 20px;">BIT</a></li>
+				  <li><a href="department.html#BIM" style="text-indent: 20px;">BIM</a></li>
+				</ul>
+      </li>
+      
+      <div class="clear"></div>
+    </ul>
+  </div>
+    
+ </div>
+        
+        <!-- end-->
+		
+	</div>
+</div> 
+    
+
+
+
+<?php echo $this->layout()->content ?>
+
+
+
+<div id="footercontainer">
+    <div id="footer">
+    	<div id="contact">
+            <h2>Get in Touch</h2>
+            <p>
+            Telephone:+977 - 01- 5534403<br>
+            Fax:+977 1 5534456<br>
+            P.O.Box: 5645, Kupondole, Kathmandu<br>
+            E-mail:info@lftc.edu.np<br>
+            Kupondole, Kathmandu, Nepal
+            </p>
+        </div>
+        <div id="social">
+        <h2>Get Connected</h2>
+        <div id="facebook">
+        <img src="<?php echo $this->baseUrl();?>/images/footer/faceb.png" title="facebook" alt="facebook" height="50px" width="50px">
+        </div>
+        <div id="twitter">
+        <img src="<?php echo $this->baseUrl();?>/images/footer/twitterb.png" title="twitter" alt="twitter"  height="50px" width="50px">
+        </div>
+        <div id="linkedin">
+        <img src="<?php echo $this->baseUrl();?>/images/footer/linkedinb.png" title="linkedin" alt="linkedin" height="50px" width="50px"><br>
+        </div>
+        <div id="youtube">
+        <img src="<?php echo $this->baseUrl();?>/images/footer/youtubelogob.png" title="youtube" alt="youtube"  height="50px" width="50px"><br>
+        </div>
+        </div>
+        <div id="misc">
+        <h2>Misc</h2>
+        <p>
+        Sitemap<br>
+        Terms and conditions<br>
+        Privacy Policy<br>
+        Career options
+        </p>
+        </div>
+    </div>
+</div>
+<div id="copyright">(C) Leapfrog Technology College, a college wing of Leapfrog Technology Inc.</div>
+
+</body>
+</html>
