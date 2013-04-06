@@ -1,6 +1,59 @@
 <?php
 
 //echo $this->show;
-echo "sdf;lksdafj;ds";
-echo $this->page;
+//echo "sdf;lksdafj;ds";
+$totalcontent =  $this->page;
+$title = $totalcontent[0];
+$content = $totalcontent[1];
+if($content == NULL){
+    echo '<div style = "width:500px; margin: 0px auto;">';
+    echo '<h1> No content is available this time</h1>';
+    echo '<h2> Please visit our other pages</h2></div>';
+    
+} 
+?>
+
+<div id="contentother">
+    <div id="admissioncontent">
+         
+    <div class="smenu">
+        <ul>
+            <?php 
+            foreach ($title as $value) {
+
+                echo '<li><a href="#'.$value.'">'.$value.'</a></li>';
+            }
+            ?>
+        </ul>
+    </div>
+    
+    <div class="scont">
+        <?php
+        $i=0;
+        foreach ($content as $value) {
+
+                echo '<h2><a name="'.$title[$i].'">'.$title[$i].'</a></h1>';
+                echo '<p>'.$value.'</p>';
+                $i++;
+            }
+        
+        ?>
+    </div>
+    </div>
+</div>
+     
+     
+     
+     
+     
+     <?php
+     /*
+if($page == 'home' || $page == 'about' || $page == 'gallery'){
+
+    echo"<h1>".$page."</h1>"; 
+}
+else
+    echo"<h1>No page Found</h1>";
+ * 
+ */
 ?>
