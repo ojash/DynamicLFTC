@@ -17,14 +17,14 @@ class IndexController extends Zend_Controller_Action
         {
             
             $page = $this->getRequest()->getParam('page');
-            include_once '/opt/lampp/htdocs/lftc/application/modules/default/models/DbTable/Content.php';
-            include_once '/opt/lampp/htdocs/lftc/application/modules/default/models/DbTable/Menu.php';
+            //include_once APPLICATION_PATH.'/modules/default/models/DbTable/Content.php';
+            //include_once APPLICATION_PATH.'/modules/default/models/DbTable/Menu.php';
 
             if($page != '404'){
-            $objContent = new Application_Modules_Default_Models_DbTable_Content();
+            $objContent = new Default_Model_DbTable_Content();
             $resContent = $objContent->fetchAll()->toArray();
                         
-            $objMenu = new Application_Modules_Default_Models_DbTable_Menu();
+            $objMenu = new Default_Model_DbTable_Menu();
             $resMenu = $objMenu->fetchAll()->toArray();
             $flag = 0;
             $titles = array();
