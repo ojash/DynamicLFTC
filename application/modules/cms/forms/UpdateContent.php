@@ -7,11 +7,17 @@
  */
 
 
-class Cms_Form_AddContent extends Zend_Form
+class Cms_Form_UpdateContent extends Zend_Form
 {
     
-    public function init()
+    
+    
+    
+    public function generateForm($contentx)
     {
+//        echo "<pre>";
+//        print_r($contentx);die;
+//        echo "</pre>";
         
         
           $this->setName('addContent')
@@ -30,8 +36,8 @@ class Cms_Form_AddContent extends Zend_Form
         $menu = new Zend_Form_Element_Select('menu_id');
         
         $menu->setLabel('Menu:')
-            ->setMultiOptions($menuList);
-        
+            ->setMultiOptions($menuList)
+            ->setValue($contentx['menu_id']);        
         
 
         
@@ -42,7 +48,8 @@ class Cms_Form_AddContent extends Zend_Form
                 ->setValidators(array(array('Alnum', false,  array('allowWhiteSpace' => true), array('message' => array(Zend_Validate_Alnum::NOT_ALNUM=>'Title can only contain alphanumerics, with no spaces'))
                                                 )))
                 ->setRequired(true)
-                ->setLabel('Title');
+                ->setLabel('Title')
+                ->setValue($contentx['title']);
                 
         
 
@@ -52,7 +59,8 @@ class Cms_Form_AddContent extends Zend_Form
         
         $content->setLabel('Content')
                 ->setRequired(true)
-                ->setFilters(array('StringTrim'));
+                ->setFilters(array('StringTrim'))
+                ->setValue($contentx['content']);
         
         
         
@@ -62,7 +70,8 @@ class Cms_Form_AddContent extends Zend_Form
         $status = new Zend_Form_Element_Checkbox('status');
         $status->setLabel('Status')
                 ->setCheckedValue('active')
-                ->setUncheckedValue('inactive');
+                ->setUncheckedValue('inactive')
+                ->setValue($contentx['status']);
         
         
         
@@ -71,7 +80,7 @@ class Cms_Form_AddContent extends Zend_Form
         //add an Submit element
         $submit = new Zend_Form_Element_Submit('submit');
         
-        $submit->setLabel('Add Content')
+        $submit->setLabel('Update Content')
                 ->setIgnore(true)
                 ->setRequired(true);
         

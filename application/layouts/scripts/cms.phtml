@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <head>
     <title>Leapfrog Technology College</title>
-   </head>
-<body bgcolor="aqua">
+    <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/style.css')) ?>
+    <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/js-image-slider.css')) ?>
+    <?php echo $this->headScript()->appendFile($this->baseUrl('/js/js-image-slider.js')) ?>
+    <?php echo $this->headScript()->appendFile($this->baseUrl('/js/jquery.js')) ?>
+    <?php echo $this->headScript()->appendFile($this->baseUrl('/js/nav.js') )?>
+</head>
+<body>
+    
+<div id="header">
+	<div id="title">
+		<div id="logo">
+			<a href="<?php echo $this->baseUrl("/") ?>" style="text-decoration:none;"><img src="<?php echo $this->baseUrl();?>/images/logo.png" alt="logo" style="border:none;"></a>
+		</div>
+		
+		<form action="#">
+		<div id="searchbox">
+			<input type="text" id="textbox" placeholder="Search LFTC">
+			<button type="submit" id="search" value="search">submit</button>
+		</div>
+		</form>    
+
+	</div>
+</div>
+	
+<div id="menuHolder">
+	<div id="menu">
+		<!--start -->
+        
+        <div id="nav">
+			<ul>
+			  <li>
+			   <a href="<?php echo $this->baseUrl("/cms/about") ?>">About</a>
+				
+			  </li>
+              <li>
+        <a href="<?php echo $this->baseUrl("/cms/admission") ?>">Admission</a>
+      </li>
+      <li>
+        <a href="404">Notice</a>
+       </li>
+                <li class="second">
+                            <a href="<?php echo $this->baseUrl("/cms/department") ?>">Departments</a>
+                  </li>
+      <li><a href="<?php echo $this->baseUrl("/cms/gallery") ?>">Gallery</a></li>
+      <div class="clear"></div>
+    </ul>
+  </div>
+    
+ </div>
+        
+        <!-- end-->
+		
+	</div>
+</div> 
     
 
+
+
 <?php echo $this->layout()->content ?>
+
 
 
 </body>
