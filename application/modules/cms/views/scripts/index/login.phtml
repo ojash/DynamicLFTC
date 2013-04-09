@@ -1,9 +1,31 @@
-<?php
-
-echo 'Login Form';
-echo $this->loginForm;
-
-
-
-
-?>
+<style>
+    .loginForm{
+        width: 200px;
+        line-height: 20px;
+        border-collapse: collapse;
+        border-radius: 5px;
+        border: 1px solid gray;
+        font-size: 15px;
+        text-indent: 10px;
+    }
+    #submitButton{
+        width: 80px;
+        text-indent: 0px;
+        border-collapse: collapse;
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+</style>
+<div id="loginContainer">
+    <div id="login" 
+         style="width: 300px; 
+                margin: 100px auto; 
+                border: 3px double #214f75;
+                box-shadow: 1px 5px 10px #383737;
+                border-radius: 5px;
+                " >
+    
+        <?php echo $this->loginForm;?>
+    
+    </div>
+</div>

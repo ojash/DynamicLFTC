@@ -57,7 +57,7 @@ class Default_IndexController extends Zend_Controller_Action
                    $flag = 1;
             if ($flag != 1 ){
             
-            $totalcontent = array($titles,$content);   
+            @$totalcontent = array($titles,$content);   
             
             $this->view->page = $totalcontent;
             

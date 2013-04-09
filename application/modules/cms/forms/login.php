@@ -15,18 +15,25 @@ class Cms_Form_login extends Zend_Form
  
         $this->addElement(
             'text', 'username', array(
-                'label' => 'Username:',
+                //'label' => 'Username:',
                 'required' => true,
+                'class' => 'loginForm',
+                'placeholder' => 'UserName',
                 'filters'    => array('StringTrim'),
             ));
  
         $this->addElement('password', 'password', array(
-            'label' => 'Password:',
+            //'label' => 'Password:',
+            'placeholder'=>'Password',
+            'class' => 'loginForm',
             'required' => true,
             ));
  
+            
+        
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
+            'id'=>'submitButton',
             'label'    => 'Login',
             ));
     }

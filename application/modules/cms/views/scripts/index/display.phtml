@@ -18,13 +18,22 @@ if($content == NULL){
     <div id="admissioncontent">
          
     <div class="smenu">
+        <script>
+        function checkDelete(){
+            var x =confirm("Do you really want to delete?");
+            return x;
+        }
+        </script>
         <ul>
             <?php 
             $i=0;
             foreach ($title as $value) {
 
-                echo '<li><a href="#'.$value.'">'.$value.'</a>
-                    <a href="/cms/index/update/'.$id[$i++].'">(Edit)</a></li>';
+                echo '<li><a href="#'.$value.'">'.$value.'</a><br>
+                    <a style="color:#214f75;" href="/cms/index/update/id/'.$id[$i].'">(<i>Edit</i>)</a>
+                    <a onclick=" return checkDelete();" style="color:#214f75;" href="/cms/index/delete/id/'.$id[$i].'">(<i>Delete</i>)</a><br>&nbsp;</li>';
+            
+                $i++;
             }
             ?>
         </ul>

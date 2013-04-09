@@ -6,13 +6,22 @@
     <?php echo $this->headScript()->appendFile($this->baseUrl('/js/js-image-slider.js')) ?>
     <?php echo $this->headScript()->appendFile($this->baseUrl('/js/jquery.js')) ?>
     <?php echo $this->headScript()->appendFile($this->baseUrl('/js/nav.js') )?>
-</head>
+  
+    </head>
 <body>
     
+    <div id="cmsbarContainer" style="height: 30px; background-color: black">
+        <div id="cmsbar" style="margin:auto; width: 1000px; padding-right: 100px;text-align: right;">
+        
+        <a href="/cms/index/addcontent" style="color:white; text-decoration: none;"><b>Add Content</b></a> ||
+        <a href="/cms/index/logout" style="color:white; text-decoration: none;"><b>Log Out</b></a>
+        
+        </div>
+    </div>
 <div id="header">
 	<div id="title">
 		<div id="logo">
-			<a href="<?php echo $this->baseUrl("/") ?>" style="text-decoration:none;"><img src="<?php echo $this->baseUrl();?>/images/logo.png" alt="logo" style="border:none;"></a>
+			<img src="<?php echo $this->baseUrl();?>/images/logo.png" alt="logo" style="border:none;">
 		</div>
 		
 		<form action="#">

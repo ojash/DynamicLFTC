@@ -22,7 +22,7 @@ class Cms_Form_UpdateContent extends Zend_Form
         
           $this->setName('addContent')
             ->setMethod('post')
-           ->setAttrib('id', 'formAddContent');
+           ->setAttrib('class', 'formAddContent');
         
         
         //add an Menu element
@@ -37,7 +37,8 @@ class Cms_Form_UpdateContent extends Zend_Form
         
         $menu->setLabel('Menu:')
             ->setMultiOptions($menuList)
-            ->setValue($contentx['menu_id']);        
+            ->setAttrib('style', 'width: 300px;border-collapse:collapse; border: 1px solid gray;border-radius:5px;line-height:20px;')
+           ->setValue($contentx['menu_id']);        
         
 
         
@@ -49,7 +50,8 @@ class Cms_Form_UpdateContent extends Zend_Form
                                                 )))
                 ->setRequired(true)
                 ->setLabel('Title')
-                ->setValue($contentx['title']);
+                ->setAttrib('style', 'width: 300px;border-collapse:collapse; border: 1px solid gray;border-radius:5px;line-height:20px;')
+              ->setValue($contentx['title']);
                 
         
 
@@ -60,6 +62,8 @@ class Cms_Form_UpdateContent extends Zend_Form
         $content->setLabel('Content')
                 ->setRequired(true)
                 ->setFilters(array('StringTrim'))
+                ->setAttrib('style', 'width: 400px;height:300px;border-collapse:collapse; border: 1px solid gray;border-radius:5px;line-height:20px;')
+
                 ->setValue($contentx['content']);
         
         

@@ -16,7 +16,7 @@ class Cms_Form_AddContent extends Zend_Form
         
           $this->setName('addContent')
             ->setMethod('post')
-           ->setAttrib('id', 'formAddContent');
+           ->setAttrib('class', 'formAddContent');
         
         
         //add an Menu element
@@ -30,6 +30,7 @@ class Cms_Form_AddContent extends Zend_Form
         $menu = new Zend_Form_Element_Select('menu_id');
         
         $menu->setLabel('Menu:')
+                ->setAttrib('style', 'width: 300px;border-collapse:collapse; border: 1px solid gray;border-radius:5px;line-height:20px;')
             ->setMultiOptions($menuList);
         
         
@@ -42,7 +43,9 @@ class Cms_Form_AddContent extends Zend_Form
                 ->setValidators(array(array('Alnum', false,  array('allowWhiteSpace' => true), array('message' => array(Zend_Validate_Alnum::NOT_ALNUM=>'Title can only contain alphanumerics, with no spaces'))
                                                 )))
                 ->setRequired(true)
+                ->setAttrib('style', 'width: 300px;border-collapse:collapse; border: 1px solid gray;border-radius:5px;line-height:20px;')
                 ->setLabel('Title');
+        
                 
         
 
@@ -52,6 +55,7 @@ class Cms_Form_AddContent extends Zend_Form
         
         $content->setLabel('Content')
                 ->setRequired(true)
+                ->setAttrib('style', 'width: 400px;height:300px;border-collapse:collapse; border: 1px solid gray;border-radius:5px;line-height:20px;')
                 ->setFilters(array('StringTrim'));
         
         
